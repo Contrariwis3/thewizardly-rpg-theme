@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="rpgui-container framed centered">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+
+    <p>
+        {{ range (.GetTerms "tags") }}
+        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+        {{ end }}
+    </p>
+</div>
+{{ end }}

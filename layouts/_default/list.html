@@ -1,0 +1,41 @@
+{{ define "main" }}
+<content>
+    {{ if .Data.Singular }}
+    <div class="rpgui-container framed centered">
+        <h3 style="margin-bottom:0">Filtering for "{{ .Title }}" - <a href="{{ "/" | relURL }}">Remove filter</a></h3>
+        {{ range .Pages }}
+        <p>
+            <a href="{{ .Permalink }}"><time datetime='{{ .Date.Format " 2006-01-02T15:04:05-0700" }}' pubdate>{{ .Date.Format "Jan 02, 2006 03:04 PM" }}</time></a>:
+            {{ if .Title }}
+            <span class="p-name"><i>{{ .Title }}</i> - </span>
+            {{ end }}
+            <span class="p-summary">{{ .Summary | truncate 40 }}</span>
+        </p>
+        {{ else }}
+        <p>No posts yet.</p>
+        {{ end }}
+    </div>
+    {{ else }}
+    <div class="rpgui-container framed centered">
+        {{ range .Pages }}
+        <p>
+            <a href="{{ .Permalink }}"><time datetime='{{ .Date.Format " 2006-01-02T15:04:05-0700" }}' pubdate>{{
+                    .Date.Format "Jan 02, 2006 03:04 PM" }}</time></a>:
+            {{ if .Title }}
+            <span class="p-name"><i>{{ .Title }}</i> - </span>
+            {{ end }}
+            <span class="p-summary">{{ .Summary | truncate 40 }}</span>
+        </p>
+        {{ else }}
+        <p>No posts yet.</p>
+        {{ end }}
+    </div>
+
+    <div class="rpgui-container framed centered">
+        {{ range .Site.Taxonomies.tags }}
+        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a> 
+        {{ end }}
+    </div>
+    {{ end }}
+</content>
+{{ end }}

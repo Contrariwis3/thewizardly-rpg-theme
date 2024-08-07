@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="rpgui-container framed centered">
+    <header>
+        <div class="rpgui-icon small exclamation"></div>
+
+        <a href="{{ .Permalink }}">
+            <time class="dt-published">
+                {{ .Date.Format "Jan 02, 2006 03:04 PM" }}
+            </time>
+        </a>
+
+        {{ $categories := (.GetTerms "categories") }}
+        {{ if gt (len $categories) 0 }}
+
+        {{ range $categories }}
+        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+        {{ end }}
+
+        {{ end }}
+
+    </header>
+
+    <hr class="golden" />
+
+    {{ if .Title }}
+    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    {{ end }}
+
+    {{ .Content }}
+
+    <p>
+    <div class="rpgui-icon small potion-blue"></div>{{ partial "reply-by-email.html" . }}
+    </p>
+
+    {{ if .Site.Params.include_conversation }}
+    <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
+    {{ end }}
+</div>
+{{ end }}

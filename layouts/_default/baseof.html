@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{ partial "head.html" . }}
+</head>
+
+<body>
+    <div id="content" class="rpgui-content">
+        <div id="navigation" class="rpgui-container framed-golden centered">
+            <header>
+                <h1><a href="/">{{ .Site.Title }}</a></h1>
+            </header>
+            <hr class="golden">
+            <div class="rpgui-center">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL | relLangURL | safeURL }}"><button class="rpgui-button" type="button">{{ .Name }}</button></a>
+                {{ end }}
+            </div>
+        </div>
+
+        {{ block "main" . }}{{ end }}
+
+        <div class="rpgui-container framed-golden centered">
+            <div class="rpgui-center">
+                <a href="{{ "feed.xml" | absURL }}"><button class="rpgui-button" type="button">RSS</button></a>
+                <a href="{{ "feed.json" | absURL }}"><button class="rpgui-button" type="button">JSON</button></a>
+                <hr class="golden">
+                <footer>
+                    <h4>© {{ now.Format "2006"}} {{ or .Site.Author.name .Site.Title }}</h4>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
