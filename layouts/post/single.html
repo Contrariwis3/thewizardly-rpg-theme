@@ -24,11 +24,10 @@
 
     {{ .Content }}
 
-    <p>
-        <span class="icon-wrapper">
-            <div class="icon potion-blue"></div>{{ partial "reply-by-email.html" . }}
-        </span>
-    </p>
+    <p></p>
+    <span class="icon-wrapper">
+        <div class="icon potion-blue"></div>{{ partial "reply-by-email.html" . }}
+    </span>
 
     {{ if .Site.Params.include_conversation }}
     <script type="text/javascript" src="https://micro.blog/conversation.js?url={{ .Permalink }}"></script>
