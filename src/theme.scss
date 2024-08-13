@@ -190,7 +190,7 @@ button {
         border-image-width: 18px;
         border-width: 15px;
 
-        header {
+        span.icon {
             display: flex;
 
             a {
@@ -224,22 +224,6 @@ button {
         border-image-width: 7px;
         border-width: 7px;
     }
-}
-
-
-#navigation {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.centered {
-    position: relative;
-    min-width: 740px;
-    max-width: 900px;
-    margin: 0 auto;
-
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 // Imports
