@@ -189,6 +189,14 @@ button {
         border-image-source: url("/img/border-image.png");
         border-image-width: 18px;
         border-width: 15px;
+
+        header {
+            display: flex;
+
+            a {
+                margin: auto 0;
+            }
+        }
     }
 
     &.framed-golden {
@@ -215,13 +223,6 @@ button {
         border-image-source: url("/img/border-image-grey.png");
         border-image-width: 7px;
         border-width: 7px;
-    }
-
-    header {
-        display: flex;
-        a {
-            margin: auto 0;
-        }
     }
 }
 
