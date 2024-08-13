@@ -4,17 +4,15 @@
 <div class="container framed">
     <header>
         <div class="icon exclamation"></div>
-    
-        {{ if .Title }}
-        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-        {{ end }}
-    
+
         <a href="{{ .Permalink }}">
             <time>
                 {{ .Date.Format "Jan 02, 2006 03:04 PM" }}
             </time>
+            {{ if .Title }} - {{ .Title }}{{ end }}
         </a>
     </header>
+    
 	{{ .Content }}
 </div>
 
