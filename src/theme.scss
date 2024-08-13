@@ -1,0 +1,241 @@
+// Includes
+@use '_text' as text;
+
+// PureCSS Grids
+@import url("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css");
+@import url("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-min.css");
+@import url("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css");
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+// Variables
+$text-color: #F8F0D8;
+$link-color: gold;
+
+$font-size: 1.0em;
+
+body {
+    color: #2E2E2E;
+
+    background: url("/img/nebula.png") bottom;
+    background-repeat: repeat;
+}
+
+button {
+    @include text.press-start-2p;
+}
+
+.content {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    font-size: $font-size;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include text.press-start-2p;
+        text-align: center;
+        margin: 7px 7px 17px 7px;
+        color: $text-color;
+    }
+
+    h1 {
+        font-size: calc($font-size + 25%);
+    }
+
+    h2 {
+        font-size: calc($font-size + 15%);
+    }
+
+    h3 {
+        font-size: calc($font-size + 5%);
+    }
+
+    h4 {
+        font-size: calc($font-size + 25%);
+        text-decoration: underline;
+    }
+
+    h5 {
+        font-size: calc($font-size + 15%);
+        text-decoration: underline;
+    }
+
+    h6 {
+        font-size: calc($font-size + 5%);
+        text-decoration: underline;
+    }
+
+    p,
+    span,
+    a,
+    label,
+    li {
+        @include text.montserrat;
+
+        color: $text-color;
+        line-height: 22px;
+    }
+
+    a {
+        color: $link-color !important;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+
+    }
+
+    label {
+        line-height: 20px !important;
+        display: inline;
+    }
+
+    ul {
+        list-style-image: url("/img/checkbox-golden-on.png");
+    }
+
+    li {
+        margin-left: 20px;
+    }
+
+    * {
+        /* remove outline effect for input elements etc */
+        outline: none;
+        /* pixelated enlargement filter (to keep the pixel-art style when enlarging pictures) */
+        -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: -webkit-crisp-edges;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: pixelated;
+        /* default font */
+        // font-family: 'Press Start 2P', cursive;
+    }
+
+    hr {
+        display: block;
+        border: 0px;
+        height: 10px;
+        background: url("/img/hr.png") repeat-x top left;
+
+        &.golden {
+            background: url("/img/hr-golden.png") no-repeat top left;
+            background-size: 100% 100%;
+        }
+    }
+
+    /* set scrollbars for webkit browsers (like chrome) */
+    ::-webkit-scrollbar,
+    &::-webkit-scrollbar {
+        width: 18px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-track {
+        background-image: url("/img/scrollbar-track.png");
+        background-size: 18px 60px;
+        background-repeat: repeat-y;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb,
+    &::-webkit-scrollbar-thumb {
+        background-image: url("/img/scrollbar-thumb.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    /* buttons */
+    ::-webkit-scrollbar-button,
+    &::-webkit-scrollbar-button {
+        background-image: url("/img/scrollbar-button.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+.container {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-position: center;
+    border-image-repeat: repeat;
+    border-style: solid;
+    box-sizing: border-box;
+    overflow: show;
+    padding: 12px;
+    z-index: 10;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    &.framed {
+        background: url("/img/background-image.png") repeat repeat;
+        border-image-slice: 6 6 6 6;
+        border-image-source: url("/img/border-image.png");
+        border-image-width: 18px;
+        border-width: 15px;
+    }
+
+    &.framed-golden {
+        background: url("/img/background-image-golden.png") repeat repeat;
+        border-image-slice: 4 4 4 4;
+        border-image-source: url("/img/border-image-golden.png");
+        border-image-width: 18px;
+        border-width: 15px;
+    }
+
+    &.framed-golden-2 {
+        background: url("/img/background-image-golden2.png") repeat repeat;
+        border-image-slice: 8 8 8 8;
+        border-image-source: url("/img/border-image-golden2.png");
+        border-image-width: 18px;
+        border-width: 15px;
+    }
+
+    &.framed-grey {
+        position: relative;
+
+        background: url("/img/background-image-grey.png") repeat repeat;
+        border-image-slice: 3 3 3 3;
+        border-image-source: url("/img/border-image-grey.png");
+        border-image-width: 7px;
+        border-width: 7px;
+    }
+}
+
+
+#navigation {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.centered {
+    position: relative;
+    min-width: 740px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+// Imports
+@import '_progressbar';
+@import '_icons';
+@import '_buttons';
+@import '_utility';

@@ -1,0 +1,42 @@
+.icon {
+    display: inline-block;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+
+    &.small {
+        width: 16px;
+        height: 16px;
+    }
+
+    &.large {
+        width: 64px;
+        height: 64px;
+    }
+
+    &.sword {
+        background-image: url("/img/icons/sword.png");
+    }
+
+    &.shield {
+        background-image: url("/img/icons/shield.png");
+    }
+
+    &.exclamation {
+        background-image: url("/img/icons/exclamation.png");
+    }
+
+    &.potion-red {
+        background-image: url("/img/icons/potion-red.png");
+    }
+
+    &.potion-green {
+        background-image: url("/img/icons/potion-green.png");
+    }
+
+    &.potion-blue {
+        background-image: url("/img/icons/potion-blue.png");
+    }
+
+}

@@ -1,10 +1,10 @@
 {{ define "main" }}
-<div class="rpgui-container framed centered">
+<div class="container framed">
     <h1>{{ .Title }}</h1>
     {{ .Content }}
 
     <p>
-        {{ range (.GetTerms "tags") }}
+        {{ range (.GetTerms "categories") }}
         <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
         {{ end }}
     </p>

@@ -1,0 +1,58 @@
+.progress {
+    height: 42px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+
+    .progress-left-edge {
+        position: absolute;
+        height: 42px;
+        width: 40px;
+        left: 0px;
+        background-image: url("/img/progress-bar-left.png");
+        background-size: 100% 100%;
+    }
+
+    .progress-right-edge {
+        position: absolute;
+        height: 42px;
+        width: 40px;
+        right: 0px;
+        background-image: url("/img/progress-bar-right.png");
+        background-size: 100% 100%;
+    }
+
+    .progress-track {
+        position: absolute;
+        height: 42px;
+        left: 40px;
+        right: 40px;
+        background-image: url("/img/progress-bar-track.png");
+        background-repeat: repeat-x;
+        background-size: 36px 100%;
+    }
+
+    .progress-fill {
+        position: absolute;
+        top: 9px;
+        bottom: 8px;
+        left: 0;
+        width: 100%;
+        background-image: url("/img/progress.png");
+        background-repeat: repeat-x;
+        background-size: 36px 100%;
+
+        &.blue {
+            background-image: url("/img/progress-blue.png");
+        }
+
+        &.green {
+            background-image: url("/img/progress-green.png");
+        }
+
+        &.red {
+            background-image: url("/img/progress-red.png");
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@mixin montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin press-start-2p {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin text-shadow {
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}

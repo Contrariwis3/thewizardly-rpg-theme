@@ -1,0 +1,32 @@
+/* to get pixelated images (nearest-neighbor filter) on all  browsers */
+.pixelated {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: pixelated;
+}
+
+/* center things */
+.center {
+    text-align: center;
+    align-content: center;
+    position: relative;
+}
+
+/* rotate object 90 degrees */
+.rotate-90 {
+    /* rotate 90 degrees */
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    /* rotate from center-left side */
+    -ms-transform-origin: 0% 50%;
+    /* IE 9 */
+    -webkit-transform-origin: 0% 50%;
+    /* Chrome, Safari, Opera */
+    transform-origin: 0% 50%;
+}

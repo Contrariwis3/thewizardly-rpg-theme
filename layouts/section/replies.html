@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="rpgui-container framed centered">
+<div class="container framed">
     {{ if .Site.Params.paginate_replies }}
     {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "reply") }}
     {{ $list := $paginator.Pages }}

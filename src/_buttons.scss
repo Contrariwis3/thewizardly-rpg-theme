@@ -1,0 +1,83 @@
+.button {
+    background: url("/img/button.png") no-repeat no-repeat;
+    
+    background-clip: padding-box;
+    background-color: Transparent;
+    background-origin: padding-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+    border: none;
+    display: inline-block;
+    font-size: 1.0em;
+    height: 60px;
+    max-width: 100%;
+    min-width: 140px;
+    outline: none;
+    overflow: hidden;
+    padding-left: 35px;
+    padding-right: 35px;
+
+    &.hover,
+    &:hover {
+        background-image: url("/img/button-hover.png");
+    }
+
+    &.down,
+    &:active {
+        background-image: url("/img/button-down.png");
+    }
+
+    &.golden {
+        background: url("/img/button-golden.png") no-repeat no-repeat;
+        background-size: 100% 80%;
+        padding-top: 5px;
+        overflow: visible;
+
+        p {
+            display: inline-block;
+        }
+
+        &.hover,
+        &:hover {
+            background-image: url("/img/button-golden-hover.png");
+        }
+
+        &.down,
+        &:active {
+            background-image: url("/img/button-golden-down.png");
+        }
+
+        &:before {
+            white-space: nowrap;
+            display: inline-block;
+            content: "";
+            width: 34px;
+            display: block;
+            height: 110%;
+            background: transparent url("/img/button-golden-left.png") no-repeat right center;
+            background-size: 100% 100%;
+            margin: 0 0 0 0;
+            left: 0px;
+            float: left;
+            margin-left: -46px;
+            margin-top: -5%;
+        }
+
+        &:after {
+            white-space: nowrap;
+            display: block;
+            content: "";
+            width: 34px;
+            height: 110%;
+            background: transparent url("/img/button-golden-right.png") no-repeat left center;
+            background-size: 100% 100%;
+            margin: 0 0 0 0;
+            right: 0px;
+            float: right;
+            margin-right: -46px;
+            margin-top: -5%;
+        }
+    }
+}
