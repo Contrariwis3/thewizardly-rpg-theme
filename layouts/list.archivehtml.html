@@ -6,7 +6,7 @@
 <div class="container framed">
 	<h6>Categories</h6>
 	{{ range $list }}
-	<a href="{{ .Permalink }}">#{{ .Title }}</a>
+	<span>[ <a href="{{ .Permalink }}">#{{ .Title }}</a> ]</span>
 	{{ end }}
 </div>
 
