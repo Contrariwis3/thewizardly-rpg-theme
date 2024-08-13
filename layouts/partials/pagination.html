@@ -4,21 +4,23 @@ default 10) }}
 <div class="rpgui-container framed">
 	<nav>
 		<div style="display: flex; justify-content: space-around">
-			<div> {{ if $paginator.HasPrev }}
-				<div class="icon sword"></div>
-				<a href="{{ $paginator.Prev.URL }}" title="Previous Page">
-					← Newer Posts
-				</a>
+			<div>
+				{{ if $paginator.HasPrev }}
+				<span class="icon-wrapper">
+					<div class="icon sword"></div>
+					<a href="{{ $paginator.Prev.URL }}" title="Previous Page">← Newer Posts</a>
+				</span>
 				{{ end }}
 			</div>
 
 			<div></div>
-			
-			<div> {{ if $paginator.HasNext }}
-				<a href="{{ $paginator.Next.URL }}">
-					Older Posts →
-				</a>
-				<div class="icon shield"></div>
+
+			<div>
+				{{ if $paginator.HasNext }}
+				<span class="icon-wrapper">
+					<a href="{{ $paginator.Next.URL }}">Older Posts →</a>
+					<div class="icon shield"></div>
+				</span>
 				{{ end }}
 			</div>
 		</div>

@@ -2,21 +2,24 @@
 <content>
     {{ if .Data.Singular }}
     <div class="container framed">
-        <h3>Filtering for "{{ .Title }}" - <a href="{{ "/archive" | relURL }}">Remove filter</a></h3>
+        <h3>Filtering for "{{ .Title }}"</h3>
         {{ range .Pages }}
         <p>
-            <a href="{{ .Permalink }}">
-                <time datetime='{{ .Date.Format " 2006-01-02T15:04:05-0700" }}' pubdate>{{ .Date.Format "Jan 02, 2006 03:04 PM" }}</time>
-            </a>:
-            
-            {{ if .Title }}
-            <span><i>{{ .Title }}</i> - </span>
-            {{ end }}
-            <span>{{ .Summary | truncate 40 }}</span>
+            <a href="{{ .Permalink }}"><time datetime='{{ .Date.Format "2006-01-02T15:04:05-0700" }}' pubdate>{{ .Date.Format "Jan 02, 2006 03:04 PM" }}</time></a>:
+            <span>
+                {{ if .Title }}
+                <i>{{ .Title }}</i> -
+                {{ end }}
+                {{ .Summary | truncate 80 }}
+            </span>
         </p>
         {{ else }}
         <p>No posts yet.</p>
         {{ end }}
+        <span class="icon-wrapper">
+            <div class="icon sword"></div>
+            <a href="{{ " /archive" | relURL }}">⦻ Remove Filter</a>
+        </span>
     </div>
     {{ else }}
     <div class="container framed">
