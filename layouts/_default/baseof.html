@@ -30,6 +30,8 @@
                         <a href="{{ "feed.xml" | absURL }}"><button class="button" type="button">RSS</button></a>
                         <a href="{{ "feed.json" | absURL }}"><button class="button" type="button">JSON</button></a>
                         <hr class="golden">
+                        <a href="/human-generated"><img src="{{ "img/blinkies/human generated.gif" | relURL }}" alt="A pink blinking gif with the words 100% human generated"></a>
+                        <hr class="golden">
                         <footer>
                             <h2>© {{ now.Format "2006"}} {{ or .Site.Author.name .Site.Title }}</h2>
                         </footer>
