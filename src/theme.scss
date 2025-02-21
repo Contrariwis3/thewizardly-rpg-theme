@@ -125,14 +125,18 @@ button {
     }
 
     hr {
-        display: block;
-        border: 0px;
-        height: 10px;
         background: url("/img/hr.png") repeat-x top left;
+        border: 0px;
+        display: block;
+        height: 10px;
+        margin-bottom: 8px;
+        margin-top: 12px;
 
         &.golden {
             background: url("/img/hr-golden.png") no-repeat top left;
             background-size: 100% 100%;
+            margin-bottom: 8px;
+            margin-top: 8px;
         }
     }
 
@@ -223,6 +227,10 @@ button {
         border-image-source: url("/img/border-image-grey.png");
         border-image-width: 7px;
         border-width: 7px;
+    }
+
+    header {
+        margin-bottom: 16px;
     }
 }
 
