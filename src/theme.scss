@@ -1,3 +1,4 @@
+@use "sass:meta";
 // Imports
 @use '_text' as text;
 @import url("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css");
@@ -63,6 +64,51 @@ button {
     @include text.press-start-2p;
 }
 
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include text.press-start-2p;
+    text-align: center;
+    margin: 24px 7px 28px;
+    color: $text-color;
+    text-decoration: none;
+}
+
+// Regular headings
+h1 {
+    font-size: calc(#{$font-size} + 90%);
+}
+
+h2 {
+    font-size: calc(#{$font-size} + 60%);
+}
+
+h3 {
+    font-size: calc(#{$font-size} + 40%);
+}
+
+h4 {
+    font-size: calc(#{$font-size} + 30%);
+    //border-bottom: 3px solid gold;
+    //padding-bottom: 5px;
+}
+
+h5 {
+    font-size: calc(#{$font-size} + 10%);
+    //border-bottom: 2px solid gold;
+    //padding-bottom: 4px;
+}
+
+h6 {
+    font-size: calc(#{$font-size});
+    //border-bottom: 1px solid gold;
+    //padding-bottom: 3px;
+}
+
 .content {
     padding: 0;
     margin: 0;
@@ -79,39 +125,17 @@ button {
     h4,
     h5,
     h6 {
-        @include text.press-start-2p;
-        text-align: center;
-        margin: 7px 7px 17px;
-        color: $text-color;
-    }
-
-    // Regular headings
-    h1 {
-        font-size: calc(#{$font-size} + 25%);
-    }
-
-    h2 {
-        font-size: calc(#{$font-size} + 15%);
-    }
-
-    h3 {
-        font-size: calc(#{$font-size} + 5%);
-    }
-
-    // Underlined headings
-    h4 {
-        font-size: calc(#{$font-size} + 25%);
-        text-decoration: underline;
-    }
-
-    h5 {
-        font-size: calc(#{$font-size} + 15%);
-        text-decoration: underline;
-    }
-
-    h6 {
-        font-size: calc(#{$font-size} + 5%);
-        text-decoration: underline;
+        &::after {
+            content: "";
+            display: block;
+            width: 70%;
+            /* Takes up ~70% of the column width */
+            margin: 12px auto 0;
+            /* Centers the line and adds spacing */
+            height: 10px;
+            background: url("/img/hr-golden.png") no-repeat top center;
+            background-size: 100% 100%;
+        }
     }
 
     // Text elements
@@ -262,11 +286,26 @@ button {
 
     header {
         margin-bottom: 16px;
+
+        h1 {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+        h2 {
+            &::after {
+                display: none;
+            }
+        }
     }
 }
 
+
 // Component imports
-@import '_progressbar';
-@import '_icons';
-@import '_buttons';
-@import '_utility';
+@include meta.load-css('_progressbar');
+@include meta.load-css('_icons');
+@include meta.load-css('_buttons');
+@include meta.load-css('_utility');
