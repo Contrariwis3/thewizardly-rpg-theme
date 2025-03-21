@@ -57,7 +57,7 @@ $font-size: 1.0em;
 
 body {
     color: #2E2E2E;
-    background: url("/img/nebula.png") bottom repeat;
+    background: url("/img/nebula.webp") bottom repeat;
 }
 
 button {
@@ -290,6 +290,16 @@ h6 {
         h1 {
             &::after {
                 display: none;
+            }
+        }
+
+        .post-categories {
+            display: block;
+            margin-top: 8px;
+            margin-left: 32px;
+
+            a {
+                margin-right: 8px;
             }
         }
     }

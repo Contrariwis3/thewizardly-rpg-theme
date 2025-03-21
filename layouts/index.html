@@ -10,9 +10,18 @@
                 <time>
                     {{ .Date.Format "Jan 02, 2006 03:04 PM" }}
                 </time>
-                {{ if .Title }} - {{ .Title }}{{ end }}
+                {{ if .Title }} | {{ .Title }}{{ end }}
             </a>
         </span>
+
+        {{ $categories := (.GetTerms "categories") }}
+        {{ if gt (len $categories) 0 }}
+        <span class="post-categories">
+            {{ range $categories }}
+            <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+            {{ end }}
+        </span>
+        {{ end }}
     </header>
 
     {{ .Content }}
